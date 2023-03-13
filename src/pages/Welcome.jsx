@@ -10,7 +10,7 @@ function Welcome() {
               MFA DEMO
             </div>
             <div className="text font-semibold text-white">
-              In Amplify + React + Google Auth
+              Using AWS Amplify + React + Google Auth
             </div>
           </div>
         </div>
