@@ -1,3 +1,4 @@
+import { Auth } from 'aws-amplify';
 import apperImage from "../assets/apper.png";
 
 function Welcome() {
@@ -11,6 +12,14 @@ function Welcome() {
             </div>
             <div className="text font-semibold text-white">
               Using AWS Amplify + React + Google Auth
+            </div>
+            <div className='w-20 h-10'>
+              <button className='w-20 h-10 bg-fuchsia-400' onClick={() => Auth.federatedSignIn({ provider:"Google" })}>
+                {/* <img src={btn} alt="Google Sign In button"
+                    className="googleSignIn"
+                    style={{height:"45px", width:"190px"}}/> */}
+                    LOGIN
+                </button>
             </div>
           </div>
         </div>
