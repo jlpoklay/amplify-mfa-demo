@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { Hub, Auth } from 'aws-amplify';
 import logo from './logo.svg';
 import './App.css';
-import Welcome from './pages/Welcome.jsx'
-import Landing from './pages/Landing.jsx';
+
+import Main from './pages/Main'
+import { UserProvider } from './contexts/userContext';
 
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
   async function getUser() {
   try {
   const token = await Auth.currentAuthenticatedUser();
-    window.localStorage.setItem('APPUSER', JSON.stringify(token))
+    //window.localStorage.setItem('APPUSER', JSON.stringify(token))
     setLoading(false);
     setUser(token);
   } catch(err) {
@@ -39,10 +40,9 @@ function App() {
 
   return (
     <>
-      {user
-        ? <Landing/>
-        : <Welcome/>
-      }
+      <UserProvider value={user}>
+        <Main/>
+      </UserProvider>
     </>
   );
 }
