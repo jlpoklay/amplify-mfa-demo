@@ -15,6 +15,7 @@ function App() {
   async function getUser() {
   try {
   const token = await Auth.currentAuthenticatedUser();
+    window.localStorage.setItem('APPUSER', JSON.stringify(token))
     setLoading(false);
     setUser(token);
   } catch(err) {

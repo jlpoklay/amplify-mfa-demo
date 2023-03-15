@@ -14,7 +14,7 @@ function Welcome() {
               Using AWS Amplify + React + Google Auth
             </div>
             <div className='w-20 h-10'>
-              <button className='w-20 h-10 bg-fuchsia-400' onClick={() => Auth.federatedSignIn({ provider:"Google" })}>
+              <button className='w-20 h-10 bg-fuchsia-400' onClick={() => Auth.federatedSignIn()}>
                 {/* <img src={btn} alt="Google Sign In button"
                     className="googleSignIn"
                     style={{height:"45px", width:"190px"}}/> */}
